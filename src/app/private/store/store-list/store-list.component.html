@@ -1,0 +1,114 @@
+
+<p-breadcrumb class="max-w-full row" [model]="[{label: 'Loja' }, { label: 'Listar' }]" [home]="{ icon: 'pi pi-home', routerLink: '/private/store/list' }" />
+<div class="filter-container">
+  <form [formGroup]="formGroup" (ngSubmit)="getStores()">
+    <div class="form-group row">
+      <div class="col text-end">
+        <button type="submit" class="btn btn-info" routerLink="../create">Cadastrar</button>
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="fullName">Nome Completo</label>
+        <input
+          id="fullName"
+          type="text"
+          formControlName="fullName"
+          class="form-control"
+        />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+        />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="phoneNumber">Telefone</label>
+        <input
+          id="phoneNumber"
+          type="text"
+          formControlName="phoneNumber"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="documentType">Tipo de Documento</label>
+        <input
+          id="documentType"
+          type="text"
+          formControlName="documentType"
+          class="form-control"
+        />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="cpfCnpj">CPF/CNPJ</label>
+        <input
+          id="cpfCnpj"
+          type="text"
+          formControlName="cpfCnpj"
+          class="form-control"
+        />
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status" class="form-control">
+          <option *ngFor="let status of statusList" [value]="status.value">
+            {{ status.label }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col text-end">
+        <button type="submit" class="btn btn-success">Pesquisar</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<p-table
+  [value]="storeList()"
+  [paginator]="true"
+  [rows]="5"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [rowsPerPageOptions]="[5, 10, 20]"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Cpf / CNPJ</th>
+      <th>Nome Completo</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Tipo de Usuário</th>
+      <th>Status</th>
+      <th>Data de Registro</th>
+      <th>Ações</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td>{{ user.cpfCnpj }}</td>
+      <td>{{ user.fullName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.userType }}</td>
+      <td>{{ user.status }}</td>
+      <td>{{ user.dateRegister | date }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="onEdit(user.idUser)">
+          Editar
+        </button>
+        <button class="btn btn-danger" (click)="onDelete(user.idUser)">
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

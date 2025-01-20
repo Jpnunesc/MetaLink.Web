@@ -1,11 +1,12 @@
-import { Component, ElementRef, inject } from '@angular/core';
-import { LayoutService } from '../layout.service';
+import { Component, ElementRef, inject, OnInit } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './app-sidebar.component.html',
-  styleUrl: './app-sidebar.component.css'
+  styleUrl: './app-sidebar.component.css',
+  standalone: false
 })
-export class AppSidebarComponent {
-  public layoutService = inject(LayoutService);
-  public el = inject(ElementRef);
+
+export class AppSidebarComponent implements OnInit {
+  ngOnInit() {
+  }
 }

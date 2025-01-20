@@ -1,1 +1,14 @@
+<!-- <div *ngIf="isloading()" class="loading">Loading&#8230;</div> -->
+
+<div class="preloader-backdrop" *ngIf="isloading()" >
+  <div class="clock-loader">
+    <img
+      src="assets/img/loading-100.svg"
+      alt="Loading"
+      height="80"
+      width="80"
+    />
+  </div>
+</div>
+
 <router-outlet></router-outlet>

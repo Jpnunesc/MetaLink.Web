@@ -4,11 +4,13 @@ import { PrivateRoutingModule } from './private-routing.module';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    PrivateRoutingModule
+    PrivateRoutingModule,
+
   ]
 })
 export class PrivateModule { }

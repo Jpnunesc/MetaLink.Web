@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-        { path: '**', redirectTo: '' }
+        { path: '', component: LoginComponent, },
     ])],
     exports: [RouterModule]
 })

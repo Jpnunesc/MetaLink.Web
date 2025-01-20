@@ -1,21 +1,20 @@
-import { Component, inject } from '@angular/core';
-import { LayoutService } from '../layout.service';
-
-
+import { Component, OnInit } from '@angular/core';
+import { inject } from '@angular/core/testing';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
-  styleUrl: './app-layout.component.css'
+  styleUrls: ['./app-layout.component.css'],
+  standalone: false
 })
-export class AppLayoutComponent {
+export class AppLayoutComponent implements OnInit {
+  constructor(private router: Router) { }
 
-  private layoutService = inject(LayoutService);
+  ngOnInit(): void {
 
-  get containerClass() {
-    return {
-        'layout-theme-light': this.layoutService.config().colorScheme === 'light',
-        'layout-theme-dark': this.layoutService.config().colorScheme === 'dark',
-    }
-}
-
+  }
+  activeRouter(route: string): boolean {
+    const active = this.router.url.includes(route);
+    return active;
+  }
 }

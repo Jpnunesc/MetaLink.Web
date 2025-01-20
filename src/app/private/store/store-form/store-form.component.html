@@ -1,0 +1,102 @@
+
+<p-breadcrumb class="max-w-full row" [model]="[{label: 'Loja' }, { label: 'Cadastrar' }]" [home]="{ icon: 'pi pi-home', routerLink: '/private/store/list' }" />
+
+<div class="filter-container">
+  <form [formGroup]="formGroup" (ngSubmit)="save(formDirective)" #formDirective="ngForm">
+    <div class="form-group row">
+      <div class="col text-end">
+        <button type="submit" class="btn btn-info" routerLink="/private/store/list">Voltar</button>
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <div class="col-12 col-sm-6 col-md-6 required">
+        <label for="fullName">Nome Completo</label>
+        <input
+          id="fullName"
+          type="text"
+          formControlName="fullName"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('fullName')"></app-field-errors>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6">
+        <label for="phoneNumber">Telefone</label>
+        <input
+          id="phoneNumber"
+          type="text"
+          formControlName="phoneNumber"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('phoneNumber')"></app-field-errors>
+      </div>
+      </div>
+      <div class="form-group row mb-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('email')"></app-field-errors>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="password">Senha</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('password')"></app-field-errors>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="userType">Tipo Usuário</label>
+        <select id="userType" formControlName="userType" class="form-control">
+          <option *ngFor="let userType of userTypeList" [value]="userType.value">
+            {{ userType.label }}
+          </option>
+        </select>
+        <app-field-errors [control]="formGroup.get('userType')"></app-field-errors>
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="documentType">Tipo de Documento</label>
+        <select id="documentType" formControlName="documentType" class="form-control">
+          <option *ngFor="let type of documentTypeList" [value]="type.value">
+            {{ type.label }}
+          </option>
+        </select>
+        <app-field-errors [control]="formGroup.get('documentType')"></app-field-errors>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="cpfCnpj">CPF/CNPJ</label>
+        <input
+          id="cpfCnpj"
+          type="text"
+          formControlName="cpfCnpj"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('cpfCnpj')"></app-field-errors>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status" class="form-control">
+          <option *ngFor="let status of statusList" [value]="status.value">
+            {{ status.label }}
+          </option>
+        </select>
+        <app-field-errors [control]="formGroup.get('status')"></app-field-errors>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col text-end">
+        <button type="submit" class="btn btn-success">Salvar</button>
+      </div>
+    </div>
+  </form>
+
+</div>

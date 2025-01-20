@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './app-footer.component.html',
-  styleUrl: './app-footer.component.css'
+  styleUrl: './app-footer.component.css',
+  standalone: false
 })
 export class AppFooterComponent {
-  public layoutService = inject(LayoutService);
 }
