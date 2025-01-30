@@ -1,1 +1,33 @@
-<p style="color: tomato;">dashboard-store works!</p>
+<full-calendar [options]="calendarOptions"></full-calendar>
+
+<p-dialog header="Edit Profile" [(visible)]="editEventVisible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-8">Update your information.</span>
+    <form [formGroup]="formGroup" (ngSubmit)="saveEditEvent(formDirective)" #formDirective="ngForm">
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="courtId">Tipo Usuário</label>
+        <select id="courtId" formControlName="courtId" class="form-control">
+          <option *ngFor="let court of courtList" [value]="court.value">
+            {{ court.label }}
+          </option>
+        </select>
+        <app-field-errors [control]="formGroup.get('courtId')"></app-field-errors>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-6 required">
+        <label for="bookingDateTime">Horário</label>
+        <input
+          id="bookingDateTime"
+          type="text"
+          formControlName="bookingDateTime"
+          class="form-control"
+        />
+        <app-field-errors [control]="formGroup.get('fullName')"></app-field-errors>
+      </div>
+
+    </form>
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="editEventVisible = false" />
+        <p-button label="Save" (click)="editEventVisible = false" />
+    </div>
+</p-dialog>

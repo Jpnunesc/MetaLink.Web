@@ -1,0 +1,23 @@
+.full-calendar-container {
+  margin-left: 200px; /* Largura do menu lateral */
+  padding: 20px; /* Espaço adicional para bordas */
+  height: calc(100vh - 50px); /* Ajusta a altura para ocupar toda a tela, menos o header (se houver) */
+  overflow: hidden; /* Impede barras de rolagem desnecessárias */
+}
+
+.fc {
+  height: 100%; /* Garante que o calendário ocupe toda a altura do contêiner */
+}
+
+.fc-event-light {
+  background-color: #f0f0f0; /* Cor de fundo do evento */
+  color: #000; /* Cor do texto do evento */
+}
+.fc-event-solid-primary {
+  background-color: #007bff; /* Cor de fundo do evento */
+  color: #fff; /* Cor do texto do evento */
+}
+.fc-event-success {
+  background-color: #28a745; /* Cor de fundo do evento */
+  color: #fff; /* Cor do texto do evento */
+}

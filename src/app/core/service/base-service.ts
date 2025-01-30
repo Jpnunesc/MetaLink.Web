@@ -1,7 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 
 export class BaseService {
-
   protected convertToHttpParams(filter: any): HttpParams {
     let params = new HttpParams();
 
@@ -27,11 +26,13 @@ export class BaseService {
 
   public appendasicFields(formData: FormData, entryData: any): void {
     for (const key of Object.keys(entryData) as (keyof object)[]) {
-        const value = entryData[key];
-         if (!(value instanceof Object)) {
-            formData.append(key, value);
-        }
+      const value = entryData[key];
+      if (value === undefined || value === null || value === '' || value === 'null') {
+        continue;
+      }
+      if (!(value instanceof Object)) {
+        formData.append(key, value);
+      }
     }
-}
-
+  }
 }

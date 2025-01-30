@@ -9,13 +9,14 @@ import { SearchUserPagedOutput } from './interface/search-user-paged-output';
 import { SearchUserPagedInput } from './interface/search-user-paged-input';
 import { CreateUserOutput } from './interface/create-user-output';
 import { CreateUserInput } from './interface/create-user-input';
+import { GetUserByIdOutput } from './interface/get-user-byId-output';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService extends BaseService {
   private http = inject(HttpClient);
-  private baseURI = `${environment.meta_api}/store`;
+  private baseURI = `${environment.meta_api}/user`;
 
   public paged = (
     filter: SearchUserPagedInput
@@ -31,5 +32,9 @@ export class StoreService extends BaseService {
     this.appendasicFields(formData, input);
      return this.http.post<ResultOutput<CreateUserOutput>>(`${this.baseURI}`, formData).pipe(take(1));
   };
+
+  public getById = (id: number): Observable<ResultOutput<GetUserByIdOutput>> => {
+    return this.http.get<ResultOutput<GetUserByIdOutput>>(`${this.baseURI}/${id}`).pipe(take(1));
+  }
 
 }

@@ -69,7 +69,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
         MenubarModule,
         ReactiveFormsModule,
         FloatLabelModule,
-        BreadcrumbModule
+        BreadcrumbModule,
+        ToastModule
 
     ],
     schemas: [
