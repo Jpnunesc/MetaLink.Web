@@ -1,32 +1,45 @@
 :host ::ng-deep {
   .speeddial-linear-demo {
-      .p-speeddial-direction-up {
-          left: calc(50% - 2rem);
-          bottom: 0;
-      }
+    .p-speeddial-direction-up {
+      left: calc(50% - 2rem);
+      bottom: 0;
+    }
 
-      .p-speeddial-direction-down {
-          left: calc(50% - 2rem);
-          top: 0;
-      }
+    .p-speeddial-direction-down {
+      left: calc(50% - 2rem);
+      top: 0;
+    }
 
-      .p-speeddial-direction-left {
-          right: 0;
-          top: calc(50% - 2rem);
-      }
+    .p-speeddial-direction-left {
+      right: 0;
+      top: calc(50% - 2rem);
+    }
 
-      .p-speeddial-direction-right {
-          left: 0;
-          top: calc(50% - 2rem);
-      }
+    .p-speeddial-direction-right {
+      left: 0;
+      top: calc(50% - 2rem);
+    }
   }
 }
 .nav-link {
-  color: #0f5315!important;
+  color: #091a8b !important;
 }
 .nav-link-hover {
-  color: #29ffff!important;
+  color: #ffffff !important;
 }
 .nav-link :hover {
-  color: #29ffff!important;
+  color: #ffffff !important;
+}
+
+.sidebar {
+  background-color: #003366;
+  color: white;
+  width: 8%;
+  height: 100vh;
+  padding: 20px;
+}
+
+.nav-link,
+.nav-link-hover {
+  color: white;
 }
