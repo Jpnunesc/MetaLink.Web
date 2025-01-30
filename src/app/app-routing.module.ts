@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: AppLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: 'private',

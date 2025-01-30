@@ -1,7 +1,7 @@
 <p-breadcrumb
   class="max-w-full row"
   [model]="[{ label: 'Loja' }, { label: 'Listar' }]"
-  [home]="{ icon: 'pi pi-home', routerLink: '/private/store/list' }"
+  [home]="{ icon: 'bi-person-circle', routerLink: '/private/store/list' }"
 />
 <div class="filter-container">
   <form [formGroup]="formGroup" (ngSubmit)="getStores()">
@@ -86,10 +86,10 @@
 >
   <ng-template pTemplate="header">
     <tr>
-      <th>Cpf / CNPJ</th>
       <th>Nome Completo</th>
       <th>Email</th>
       <th>Telefone</th>
+      <th>Cpf / CNPJ</th>
       <th>Tipo de Usuário</th>
       <th>Status</th>
       <th>Data de Registro</th>
@@ -98,10 +98,10 @@
   </ng-template>
   <ng-template pTemplate="body" let-user>
     <tr>
-      <td>{{ user.cpfCnpj }}</td>
       <td>{{ user.fullName }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.cpfCnpj }}</td>
       <td>{{ user.userType }}</td>
       <td>{{ user.status }}</td>
       <td>{{ user.dateRegister | date }}</td>

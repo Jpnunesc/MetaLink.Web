@@ -3,102 +3,115 @@
   <div class="row">
     <div
       class="col-sm-auto sticky-top"
-      style="background-color: #54fd5677!important"
+      style="background-color: #aacff4 !important"
     >
-      <div
-        class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top"
-        style="background-color: #c8f3c977!important"
+      <a
+        href="/"
+        class="d-block p-3 link-dark text-decoration-none"
+        title=""
+        data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        data-bs-original-title="Icon-only"
       >
-        <a
-          href="/"
-          class="d-block p-3 link-dark text-decoration-none"
-          title=""
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          data-bs-original-title="Icon-only"
-        >
-          <img
-            src="../../../../assets/logo3.png"
-            alt="Icon"
-            class="img-fluid"
-            style="width: 55px; height: 55px; border-radius: 30px 30px 35px 3px"
-          />
-        </a>
+        <img
+          src="../../../../assets/pngtree-silhouette-of-serving-characters-in-tennis-png-image_4126056.png"
+          alt="Icon"
+          class="img-fluid"
+          style="width: 70px; height: 55px"
+        />
+      </a>
+      <hr />
+      <ul
+        class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center"
+      >
+        <li class="nav-item">
+          <a
+            routerLink="/private/dashboard"
+            [class]="
+              activeRouter('private/dashboard')
+                ? 'nav-link-hover py-3 px-2'
+                : 'nav-link py-3 px-2'
+            "
+            title=""
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-original-title="Orders"
+          >
+            <i class="bi bi-house h1"></i>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a
+            href="private/customer/list"
+            [class]="
+              activeRouter('private/customer')
+                ? 'nav-link-hover py-3 px-2'
+                : 'nav-link py-3 px-2'
+            "
+            title=""
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-original-title="Customers"
+          >
+            <i class="bi bi-person-add h2"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="#"
+            class="nav-link py-3 px-2"
+            [class]="
+              activeRouter('private/campaign')
+                ? 'nav-link-hover py-3 px-2'
+                : 'nav-link py-3 px-2'
+            "
+            title=""
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-original-title="Dashboard"
+          >
+            <i class="bi-speedometer2 h2"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/private/store/list"
+            [class]="
+              activeRouter('store')
+                ? 'nav-link-hover py-3 px-2'
+                : 'nav-link py-3 px-2'
+            "
+            title=""
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-original-title="Home"
+          >
+            <i class="bi-person-circle h2"></i>
+          </a>
+        </li>
         <hr />
-        <ul
-          class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center"
-        >
-          <li class="nav-item">
-            <a
-              routerLink="/private/dashboard"
-              [class]="activeRouter('private/dashboard') ? 'nav-link-hover py-3 px-2' : 'nav-link py-3 px-2'"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Orders"
-            >
-              <i class="bi-table fs-1"></i>
-            </a>
-          </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a
-              href="#"
-              [class]="activeRouter('private/customer') ? 'nav-link-hover py-3 px-2' : 'nav-link py-3 px-2'"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Customers"
-            >
-              <i class="bi-people fs-1"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link py-3 px-2"
-              [class]="activeRouter('private/campaign') ? 'nav-link-hover py-3 px-2' : 'nav-link py-3 px-2'"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Dashboard"
-            >
-              <i class="bi-speedometer2 fs-1"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              routerLink="/private/store/list"
-              [class]="activeRouter('store') ? 'nav-link-hover py-3 px-2' : 'nav-link py-3 px-2'"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Home"
-            >
-              <i class="bi-house fs-1"></i>
-            </a>
-          </li>
-          <hr />
-          <li class="nav-item">
-            <a
-              href="#"
-              [class]="activeRouter('private/profile') ? 'nav-link-hover py-3 px-2' : 'nav-link py-3 px-2'"
-              title=""
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-original-title="Home"
-            >
-              <i class="bi-person-circle h2"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+        <li class="nav-item">
+          <a
+            href="#"
+            [class]="
+              activeRouter('private/profile')
+                ? 'nav-link-hover py-3 px-2'
+                : 'nav-link py-3 px-2'
+            "
+            title=""
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-original-title="Profile"
+          >
+            <i class="bi bi-gear h3"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-
     <div class="col-sm p-3 min-vh-100">
       <br />
       <br />
       <br />
-
       <router-outlet></router-outlet>
     </div>
   </div>
